@@ -17,15 +17,67 @@
         
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Enter Paragraph</label>
-          <textarea class="form-control" id="paragraph" rows="3"></textarea>
+          <textarea class="form-control" id="paragraph" rows="10"></textarea>
         </div>
-        <button class="btn btn-primary mb-2" onmousedown="para()">Split Into Documents</button>
-      
+        
+        
+        <div class="form-group">
+                <div class="form-group col-md-6">
+                  <label for="inputWord">Enter Word</label>
+                  <input type="text" class="form-control" id="inputWord">
+                </div>
+                <button class="btn btn-primary mb-2" onmousedown="para()">Split and Search</button>
       <script>
         function para(){
-         const paragraph= document.getElementById("paragraph").value;
-          console.log(paragraph);
+         const paragraph1= document.getElementById("paragraph").value;
+          const para = paragraph1.split("\n");
+          for(var i in para){
+              if(para[i]==""){
+                para.splice(i, 1);
+              }
+          }
+          para.splice(1, 1);
+          for(i in para){
+              para[i]=para[i].toLowerCase();
+          }
+          console.log(para);
+          var words=Array();
+          for(i in para){
+            words[i] = para[i].split(" ");
+          }
+          
+          console.log(words);
+          const input1 = document.getElementById("inputWord").value;
+          console.log(words);
+          for(var i in words){
+              for(var j in words[i]){
+                    if(words[i][j]==""){
+                        words[i].pop();
+                    }
+              }
+          }
+        
+          for(var i in words){
+              for(var j in words[i]){
+               
+                   
+                    if(words[i][j]==input1&& i==0)
+                    {
+                        console.log(input1+" found at document 0");
+                        break;
+                        
+                    }
+                    else  if(words[i][j]==input1 && i==1){
+                        console.log(input1+" found at document 1"); 
+                        continue;
+                        
+                    }
+                   
+                    
+              }
+          }
         }
+      
         </script>
 </body>
 
