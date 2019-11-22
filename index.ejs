@@ -26,11 +26,15 @@
                   <label for="inputWord">Enter Word</label>
                   <input type="text" class="form-control" id="inputWord">
                 </div>
-                <button class="btn btn-primary mb-2" onmousedown="para()">Split and Search</button>
+                <button class="btn btn-primary mb-2" onmousedown="para()">Split,Index and Search</button>
+                <button class="btn btn-danger mb-2" onmousedown="clear()">Clear</button>
+
       <script>
+          var paragraph1;
+          var para ;
         function para(){
-         const paragraph1= document.getElementById("paragraph").value;
-          const para = paragraph1.split("\n");
+            paragraph1= document.getElementById("paragraph").value;
+            para= paragraph1.split("\n");
           for(var i in para){
               if(para[i]==""){
                 para.splice(i, 1);
@@ -40,7 +44,11 @@
           for(i in para){
               para[i]=para[i].toLowerCase();
           }
-          console.log(para);
+          console.log("Indexing");
+          for(i in para){
+              console.log(i+" is index of "+para[i]);
+          }
+          
           var words=Array();
           for(i in para){
             words[i] = para[i].split(" ");
@@ -77,7 +85,11 @@
               }
           }
         }
-      
+        function clear(){
+            para = Array();
+            console.log("Array is Successfully Cleared");
+            console.log(para);
+        }
         </script>
 </body>
 
