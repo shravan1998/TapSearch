@@ -1,0 +1,26 @@
+{
+  "name": "tapsearch",
+  "version": "1.0.0",
+  "description": "1. Install node modules\r ```\r npm install --save",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shravan1998/TapSearch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shravan1998/TapSearch/issues"
+  },
+  "homepage": "https://github.com/shravan1998/TapSearch#readme"
+}
