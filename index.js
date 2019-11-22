@@ -15,7 +15,7 @@ app.get('/',function(req,res){
 app.set('views',__dirname);
 app.set('view engine','ejs');
 
-port='process.env.PORT || 8000';
+port=process.env.PORT || 8000;
 
 app.listen(port,function(){
     console.log("connected");
